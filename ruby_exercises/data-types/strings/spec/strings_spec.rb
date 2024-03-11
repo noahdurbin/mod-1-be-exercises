@@ -3,52 +3,52 @@ RSpec.describe 'Strings' do
     name = "alice"
     # In place of the line below, call a method on the name variable
     # defined above to acheive the expected output.
-    actual = name._____
+    actual = name.capitalize
     expected = "Alice"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     name = "aLiCe"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
+    actual = name.upcase
     expected = "ALICE"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     name = "AlIcE"
     # In place of the line below, call a method to achieve the expected output.
-    actual = name._____
+    actual = name.downcase
     expected = "alice"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     rhyme = "peter piper picked a peck of picked peppers"
     # In place of the line below, call a method to achieve the expected output.
-    actual = rhyme._____
+    actual = rhyme.reverse
     expected = "sreppep dekcip fo kcep a dekcip repip retep"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
+    actual = word.sub(/[t]/, 'k')
     expected = "kicking"
 
     expect(actual).to eq(expected)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     word = "ticking"
     # In place of the line below, call a method to achieve the expected output.
-    actual = word.______
+    actual = word.sub("ti", "clo")
     expected = "clocking"
 
     expect(actual).to eq(expected)
