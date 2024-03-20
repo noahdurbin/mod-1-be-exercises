@@ -11,9 +11,7 @@ class Centaur
     end
 
     def shoot
-        if cranky? == true
-            "NO!"
-        elsif @standing == false
+        if cranky? == true || @standing == false
             "NO!"
         else @shoot == true
             @cranky += 1

@@ -113,14 +113,26 @@ RSpec.describe Centaur do
   end
 
   it 'becomes rested after drinking a potion' do
-    # your code here
+    centaur = Centaur.new('George', 'Palomino')
+
+    centaur.drinks_potion
+
+    expect(centaur.rested).to be true
   end
 
   it 'can only drink a potion whilst standing' do
-    # your code here
+    centaur = Centaur.new('George', 'Palomino')
+
+    centaur.stand_up
+
+    expect(centaur.drinks_potion).to be true
   end
 
-  it 'gets stick if a potion is drunk while rested' do
-    # your code here
+  it 'gets sick if a potion is drunk while rested' do
+    centaur = Centaur.new('George', 'Palomino')
+
+    centaur.rested
+
+    expect(centaur.drinks_potion).to eq("sick")
   end
 end
