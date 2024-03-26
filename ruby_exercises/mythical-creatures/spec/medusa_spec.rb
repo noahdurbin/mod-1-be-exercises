@@ -1,5 +1,6 @@
 require 'rspec'
 require './lib/medusa'
+require './lib/person'
 
 RSpec.describe Medusa do
   it 'has a name' do
