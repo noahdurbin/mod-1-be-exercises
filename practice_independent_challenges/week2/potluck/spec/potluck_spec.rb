@@ -40,11 +40,45 @@ RSpec.describe Potluck do
         @potluck.add_dish(roast_pork)
         @potluck.add_dish(cocktail_meatballs)
         @potluck.add_dish(candy_salad)
-        
+
         expect(@potluck.get_all_from_category(:appetizer)).to eq([couscous_salad, summer_pizza])
         expect(@potluck.get_all_from_category(:entre)).to eq([roast_pork, cocktail_meatballs])
         expect(@potluck.get_all_from_category(:dessert)).to eq([candy_salad])
         expect(@potluck.get_all_from_category(:appetizer).first).to eq(couscous_salad)
         expect(@potluck.get_all_from_category(:appetizer).first.name).to eq("Couscous Salad")
+    end
+
+    it "can be put into a menu array that is organized by category" do
+        bean_dip = Dish.new("Bean Dip", :appetizer)
+        couscous_salad = Dish.new("Couscous Salad", :appetizer)
+        summer_pizza = Dish.new("Summer Pizza", :appetizer)
+        roast_pork = Dish.new("Roast Pork", :entre)
+        cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+        candy_salad = Dish.new("Candy Salad", :dessert)
+        @potluck.add_dish(bean_dip)
+        @potluck.add_dish(couscous_salad)
+        @potluck.add_dish(summer_pizza)
+        @potluck.add_dish(cocktail_meatballs)
+        @potluck.add_dish(roast_pork)
+        @potluck.add_dish(candy_salad)
+
+        expect(@potluck.menu).to eq({:appetizer=>["Bean Dip", "Couscous Salad", "Summer Pizza"],:entre=>["Cocktail Meatballs", "Roast Pork"],:dessert=>["Candy Salad"]})
+    end
+
+    it "can find the ratio of a category of dish to the rest of the menu" do
+        bean_dip = Dish.new("Bean Dip", :appetizer)
+        couscous_salad = Dish.new("Couscous Salad", :appetizer)
+        summer_pizza = Dish.new("Summer Pizza", :appetizer)
+        roast_pork = Dish.new("Roast Pork", :entre)
+        cocktail_meatballs = Dish.new("Cocktail Meatballs", :entre)
+        candy_salad = Dish.new("Candy Salad", :dessert)
+        @potluck.add_dish(bean_dip)
+        @potluck.add_dish(couscous_salad)
+        @potluck.add_dish(summer_pizza)
+        @potluck.add_dish(cocktail_meatballs)
+        @potluck.add_dish(roast_pork)
+        @potluck.add_dish(candy_salad)
+
+        expect(@potluck.ratio(:appetizer)).to eq(50.0)
     end
 end
