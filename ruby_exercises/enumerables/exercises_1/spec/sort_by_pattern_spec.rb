@@ -56,11 +56,17 @@ RSpec.describe 'sort_by pattern' do
     expect(sorted).to eq(["bug", "heteromorph", "mathematical", "ancyloceratina", "bioengineering"])
   end
 
-  xit 'by proximity to ten' do
+  it 'by proximity to ten' do
     prices = [3.02, 9.91, 17.9, 10.01, 11.0]
     transformed = []
     prices.each do |price|
-      transformed << [price., prices]
+      transformed << [price.round, prices]
+    end
+    transformed = transformed.sort
+    sorted = []
+    transformed.each do |sort_key, price|
+      sorted << price
+    end
     expect(sorted).to eq([10.01, 9.91, 11.0, 3.02, 17.9])
   end
 
