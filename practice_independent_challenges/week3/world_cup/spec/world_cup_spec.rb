@@ -26,11 +26,15 @@ RSpec.describe WorldCup do
     end
 
     it 'shows active players by position in the game' do
-       expect(@world_cup.active_players_by_position("midfielder")).to eq(@pogba, @modric)
+       expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba, @modric])
     end
 
     it 'eliminates specified team and removes their players from the world cup' do
         @croatia.eliminated
         expect(@world_cup.active_players_by_position("midfielder")).to eq([@pogba])
+    end
+
+    it 'can sort all players by position' do 
+        expect(@world_cup.sort_all_players_by_position).to eq({"forward" => [@mbappe], "midfielder" => [@pogba, @modric], "defender" => [@vida]})
     end
 end

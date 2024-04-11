@@ -15,8 +15,14 @@ class WorldCup
     end
 
     def active_players_by_position(position)
-        @countries.find_all do |team|
-            team.players_by_position(position)
+        @countries.map do |team|
+                team.players_by_position(position)  
+        end.flatten
+    end
+
+    def sort_all_players_by_position
+        @countries.map do |team|
+           team.players_by_position 
         end
     end
 end

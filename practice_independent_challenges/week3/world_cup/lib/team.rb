@@ -16,6 +16,7 @@ class Team
 
     def eliminated
         @eliminated = true
+        @players.clear
     end
 
     def add_player(player)
