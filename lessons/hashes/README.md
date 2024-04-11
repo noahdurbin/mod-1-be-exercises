@@ -1,4 +1,5 @@
 <!-- Updated 12/13/2022 -->
+
 # intro_hashes
 
 <!-- TABLE OF CONTENTS -->
@@ -15,18 +16,19 @@
 These exercises are used in conjunction with the [Introducing Hashes](https://backend.turing.edu/module1/lessons/introducing_hashes) lesson.
 
 We will work with the files in this order:
- ```
- warm_up/grocery_list_array.rb
- warm_up/suitcase_hash.rb
 
- practice/accessing_a_hash.rb
- practice/adding_to_a_hash.rb
- practice/deleting_from_a_hash.rb
- practice/symbols.rb
+```
+warm_up/grocery_list_array.rb
+warm_up/suitcase_hash.rb
 
- For additional practice:
- practice/build_your_own.rb
- ```
+practice/accessing_a_hash.rb
+practice/adding_to_a_hash.rb
+practice/deleting_from_a_hash.rb
+practice/symbols.rb
+
+For additional practice:
+practice/build_your_own.rb
+```
 
 ## Additional Resources
 

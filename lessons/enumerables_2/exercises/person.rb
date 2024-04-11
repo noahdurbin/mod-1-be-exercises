@@ -31,3 +31,19 @@ kardashians << Person.new("Kim", 41, ["North", "Saint", "Chicago", "Psalm"])
 kardashians << Person.new("Kris", 65, ["Kourtney", "Kim", "Khloe", "Rob", "Kendall", "Kylie"])
 kardashians << Person.new("Khloe", 37, ["True"])
 
+sorted_by_name = kardashians.sort_by do |kardashian|
+    kardashian.name
+end
+
+first_alphabetically = sorted_by_name.first
+last_alphabetically = sorted_by_name.last
+
+sorted_by_age = kardashians.sort_by do |kardashian|
+    kardashian.age
+end
+
+youngest_kardashian = sorted_by_age.first
+oldest_kardashian = sorted_by_age.last
+
+
+require 'pry'; binding.pry
