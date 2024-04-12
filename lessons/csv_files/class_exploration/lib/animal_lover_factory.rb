@@ -11,7 +11,7 @@ class AnimalLoverFactory
 
   def create_animal_lovers(path)
     CSV.foreach((path), headers: true, header_converters: :symbol) do |row|
-      @animal_lovers << AnimalLover.new(row[:id], row[:first_name], row[:last_name], row[:age])
+      @animal_lovers << AnimalLover.new(row[:id].to_i, row[:first_name], row[:last_name], row[:age].to_i)
     end
   end
 end
