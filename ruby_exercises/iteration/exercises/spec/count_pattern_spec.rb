@@ -11,7 +11,7 @@ RSpec.describe 'count pattern' do
     expect(younger_than_thirty).to eq(2)
   end
 
-  xit 'test 2' do
+  it 'test 2' do
     ages = {
       abdi: 39,
       hassan: 45,
@@ -28,17 +28,19 @@ RSpec.describe 'count pattern' do
     expect(younger_than_thirty).to eq(2)
   end
 
-  xit 'test 3' do
+  it 'test 3' do
     ages = [39, 45, 29, 24, 51]
     older_than_fifty = 0
     ages.each do |age|
-      # Your Code Here
+      if age > 50
+        older_than_fifty += 1
+      end
     end
 
     expect(older_than_fifty).to eq(1)
   end
 
-  xit 'test 4' do
+  it 'test 4' do
     ages = {
       abdi: 39,
       hassan: 45,

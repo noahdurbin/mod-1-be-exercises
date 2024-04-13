@@ -20,7 +20,7 @@ RSpec.describe MagicalPet do
     pets = MagicalPet.create_magical_pets("./data/magical_pets.csv")
     first = pets.first
 
-    expect(first).to be MagicalPet
+    expect(first).to be_a MagicalPet
     expect(first.name).to eq "Fluffy"
   end
 end
