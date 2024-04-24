@@ -50,21 +50,27 @@ RSpec.describe 'count pattern' do
     }
     older_than_fifty = 0
     ages.each do |name, age|
-      # Your Code Here
+      if age > 50
+        older_than_fifty += 1
+      end
     end
 
     expect(older_than_fifty).to eq(2)
   end
 
-  xit 'test 5' do
+  it 'test 5' do
     ages = [39, 45, 29, 24, 50]
     multiple_of_three = 0
-    # Your Code Here
+    ages.count do |age|
+      if age % 3 == 0
+        multiple_of_three += 1
+      end
+    end
 
     expect(multiple_of_three).to eq(3)
   end
 
-  xit 'test 6' do
+  it 'test 6' do
     ages = {
       abdi: 39,
       hassan: 45,
@@ -73,19 +79,29 @@ RSpec.describe 'count pattern' do
       miguel: 50
     }
     multiple_of_three = 0
-    # Your Code Here
+    ages.count do |name, age|
+      if age % 3 == 0
+        multiple_of_three += 1
+      end
+    end
 
     expect(multiple_of_three).to eq(3)
   end
 
-  xit 'test 7' do
+  it 'test 7' do
     family = ["alice", "bob", "charlie", "david", "eve"]
-    # Your Code Here
+    names_with_three_letters = 0
+
+    family.count do |name|
+      if name.length == 3
+        names_with_three_letters += 1
+      end
+    end
 
     expect(names_with_three_letters).to eq(2)
   end
 
-  xit 'test 8' do
+  it 'test 8' do
     family = {
       mother: "alice",
       father: "bob",
@@ -93,14 +109,21 @@ RSpec.describe 'count pattern' do
       uncle: "david",
       sister: "eve"
     }
-    # Your Code Here
+    names_with_three_letters = 0
+    family.count do |relationship, name|
+      if name.length == 3
+        names_with_three_letters += 1
+      end
+    end
 
     expect(names_with_three_letters).to eq(2)
   end
 
-  xit 'test 9' do
+  it 'test 9' do
     prices = [1.0, 3.9, 5.99, 18.5, 20.0]
-    # Your code goes here
+    whole_numbers = prices.count do |price|
+      if pri
+    end
 
     expect(whole_numbers).to eq(2)
   end

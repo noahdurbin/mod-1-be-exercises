@@ -43,7 +43,7 @@ pry(main)> kayak.add_hour
 pry(main)> kayak.hours_rented
 # => 3
 
-pry(main)> renter = Renter.new("Patrick Star", "4242424242424242")    
+pry(main)> renter = Renter.new("Pat rick Star", "4242424242424242")   
 # => #<Renter:0x00007fb5ef98b118...>
 
 pry(main)> renter.name
